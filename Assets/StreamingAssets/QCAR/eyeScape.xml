@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="complex_view_test3" size="10.000000 9.566160" />
+    <ImageTarget name="complex_view_test2" size="10.000000 7.065430" />
+    <ImageTarget name="complex_view_test1" size="10.000000 7.070312" />
+    <ImageTarget name="vue1_test4" size="10.000000 7.071155" />
+    <ImageTarget name="vue3_test1" size="10.000000 7.069555" />
+    <ImageTarget name="vue2_test1" size="10.000000 7.069555" />
+    <ImageTarget name="vue1_test3" size="10.000000 7.069555" />
+    <ImageTarget name="vue1_test2" size="10.000000 7.065430" />
+    <ImageTarget name="vue1_test1" size="10.000000 7.065430" />
+    <ImageTarget name="vue2" size="10.000000 10.000000" />
+    <ImageTarget name="vue1" size="10.000000 10.000000" />
+    <ImageTarget name="vue1_" size="10.000000 10.000000" />
+    <ImageTarget name="10" size="10.000000 10.258398" />
+  </Tracking>
+</QCARConfig>
