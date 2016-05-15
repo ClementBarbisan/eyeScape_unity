@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs">
     <Files>
-      <File FileName="Assets/Materials/test.shader" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/tapHandler.cs" Line="1" Column="1" />
       <File FileName="Assets/Vuforia/Scripts/VideoBackgroundBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/tapHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TrackableEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia/Scripts/DefaultTrackableEventHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
