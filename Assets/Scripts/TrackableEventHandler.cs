@@ -98,29 +98,32 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 
         // Optionally play the video automatically when the target is found
 
-        VideoPlaybackBehaviour video = GetComponentInChildren<VideoPlaybackBehaviour>();
-        if (video != null && video.AutoPlay)
+        VideoPlaybackBehaviour[] videos = GetComponentsInChildren<VideoPlaybackBehaviour>();
+        foreach (VideoPlaybackBehaviour video in videos)
         {
-            if (video.VideoPlayer.IsPlayableOnTexture())
+            if (video != null && video.AutoPlay)
             {
-                VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
-                if (state == VideoPlayerHelper.MediaState.PAUSED ||
-                    state == VideoPlayerHelper.MediaState.READY ||
-                    state == VideoPlayerHelper.MediaState.STOPPED)
+                if (video.VideoPlayer.IsPlayableOnTexture())
                 {
-                    // Pause other videos before playing this one
-                    PauseOtherVideos(video);
+                    VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
+                    if (state == VideoPlayerHelper.MediaState.PAUSED ||
+                        state == VideoPlayerHelper.MediaState.READY ||
+                        state == VideoPlayerHelper.MediaState.STOPPED)
+                    {
+                        // Pause other videos before playing this one
+                        // PauseOtherVideos(video);
 
-                    // Play this video on texture where it left off
-                    video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
-                }
-                else if (state == VideoPlayerHelper.MediaState.REACHED_END)
-                {
-                    // Pause other videos before playing this one
-                    PauseOtherVideos(video);
+                        // Play this video on texture where it left off
+                        video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
+                    }
+                    else if (state == VideoPlayerHelper.MediaState.REACHED_END)
+                    {
+                        // Pause other videos before playing this one
+                        // PauseOtherVideos(video);
 
-                    // Play this video from the beginning
-                    video.VideoPlayer.Play(false, 0);
+                        // Play this video from the beginning
+                        video.VideoPlayer.Play(false, 0);
+                    }
                 }
             }
         }
