@@ -70,6 +70,7 @@
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest 1.xml" />
      <None Include="Assets\StreamingAssets\QCAR\eyeScape.xml" />
+     <None Include="Assets\chroma_key.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
