@@ -58,9 +58,6 @@ public class VideoPlaybackMenuOptions : MenuOptions
                     // Seek the video to the beginning();
                     video.VideoPlayer.SeekTo(0.0f);
 
-                    // Display the busy icon
-                    video.ShowBusyIcon();
-
                     // Play the video full screen
                     StartCoroutine ( PlayVideo.PlayFullscreenVideoAtEndOfFrame(video) );
                 }

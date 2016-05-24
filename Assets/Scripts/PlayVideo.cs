@@ -72,8 +72,6 @@ public class PlayVideo : MonoBehaviour
                     // Seek the video to the beginning();
                     currentVideo.VideoPlayer.SeekTo(0.0f);
 
-                    // Display the busy icon
-                    currentVideo.ShowBusyIcon();
 
                     // Play the video full screen
                     StartCoroutine( PlayFullscreenVideoAtEndOfFrame(currentVideo) );
@@ -90,7 +88,7 @@ public class PlayVideo : MonoBehaviour
                         state == VideoPlayerHelper.MediaState.STOPPED)
                     {
                         // Pause other videos before playing this one
-                        PauseOtherVideos(currentVideo);
+                        //PauseOtherVideos(currentVideo);
 
                         // Play this video on texture where it left off
                         currentVideo.VideoPlayer.Play(false, currentVideo.VideoPlayer.GetCurrentPosition());
@@ -98,7 +96,7 @@ public class PlayVideo : MonoBehaviour
                     else if (state == VideoPlayerHelper.MediaState.REACHED_END)
                     {
                         // Pause other videos before playing this one
-                        PauseOtherVideos(currentVideo);
+                        //PauseOtherVideos(currentVideo);
 
                         // Play this video from the beginning
                         currentVideo.VideoPlayer.Play(false, 0);
@@ -111,9 +109,6 @@ public class PlayVideo : MonoBehaviour
                 }
                 else
                 {
-                    // Display the busy icon
-                    currentVideo.ShowBusyIcon();
-
                     // This video cannot be played on a texture, play it full screen
                     StartCoroutine( PlayFullscreenVideoAtEndOfFrame(currentVideo) );
                 }

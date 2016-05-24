@@ -26,21 +26,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
     public string m_path = null;
 
     /// <summary>
-    /// Texture for the play icon
-    /// </summary>
-    public Texture m_playTexture = null;
-
-    /// <summary>
-    /// Texture for the busy icon
-    /// </summary>
-    public Texture m_busyTexture = null;
-
-    /// <summary>
-    /// Texture for the error icon
-    /// </summary>
-    public Texture m_errorTexture = null;
-
-    /// <summary>
     /// Define whether video should automatically start
     /// </summary>
     public bool m_autoPlay = false;
@@ -71,9 +56,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
     private float mSeekPosition = 0.0f;
 
     private bool isPlayableOnTexture;
-
-    private GameObject mIconPlane = null;
-    private bool mIconPlaneActive = false;
 
     #endregion // PRIVATE_MEMBER_VARIABLES
 
@@ -132,9 +114,7 @@ public class VideoPlaybackBehaviour : MonoBehaviour
 
     void Start()
     {
-        // Find the icon plane (child of this object)
-        mIconPlane = transform.Find("Icon").gameObject;
-
+        
         // A filename or url must be set in the inspector
         if (m_path == null || m_path.Length == 0)
         {
@@ -156,9 +136,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
         // Flip the plane as the video texture is mirrored on the horizontal
         transform.localScale = new Vector3(-1 * Mathf.Abs(transform.localScale.x),
                 transform.localScale.y, transform.localScale.z);
-
-        // Scale the icon
-        ScaleIcon();
     }
 
     void OnRenderObject()
@@ -244,9 +221,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
                     mCurrentState = state;
                 }
 
-                // Scale the icon
-                ScaleIcon();
-
                 // Video is prepared, ready for playback
                 mIsPrepared = true;
             }
@@ -289,8 +263,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
                 }
             }
         }
-
-        CheckIconPlaneVisibility();
     }
 
 
@@ -334,14 +306,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
 
 
     #region PUBLIC_METHODS
-
-    /// <summary>
-    /// Displays the busy icon on top of the video
-    /// </summary>
-    public void ShowBusyIcon()
-    {
-        mIconPlane.GetComponent<Renderer>().material.mainTexture = m_busyTexture;
-    }
 
     #endregion // PUBLIC_METHODS
 
@@ -389,33 +353,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
             }
         }
 
-        // Display the appropriate icon, or disable if not needed
-        switch (newState)
-        {
-            case VideoPlayerHelper.MediaState.READY:
-            case VideoPlayerHelper.MediaState.REACHED_END:
-            case VideoPlayerHelper.MediaState.PAUSED:
-            case VideoPlayerHelper.MediaState.STOPPED:
-                mIconPlane.GetComponent<Renderer>().material.mainTexture = m_playTexture;
-                mIconPlaneActive = true;
-                break;
-
-            case VideoPlayerHelper.MediaState.NOT_READY:
-            case VideoPlayerHelper.MediaState.PLAYING_FULLSCREEN:
-                mIconPlane.GetComponent<Renderer>().material.mainTexture = m_busyTexture;
-                mIconPlaneActive = true;
-                break;
-
-            case VideoPlayerHelper.MediaState.ERROR:
-                mIconPlane.GetComponent<Renderer>().material.mainTexture = m_errorTexture;
-                mIconPlaneActive = true;
-                break;
-
-            default:
-                mIconPlaneActive = false;
-                break;
-        }
-
         if (newState == VideoPlayerHelper.MediaState.PLAYING_FULLSCREEN)
         {
             // Switching to full screen, disable VuforiaBehaviour (only applicable for iOS)
@@ -452,41 +389,6 @@ public class VideoPlaybackBehaviour : MonoBehaviour
 
         // then finally we reset to Portrait
         Screen.orientation = ScreenOrientation.Portrait;
-    }
-
-    private void ScaleIcon()
-    {
-        // Icon should fill 50% of the narrowest side of the video
-
-        float videoWidth = Mathf.Abs(transform.localScale.x);
-        float videoHeight = Mathf.Abs(transform.localScale.z);
-        float iconWidth, iconHeight;
-
-        if (videoWidth > videoHeight)
-        {
-            iconWidth = 0.5f * videoHeight / videoWidth;
-            iconHeight = 0.5f;
-        }
-        else
-        {
-            iconWidth = 0.5f;
-            iconHeight = 0.5f * videoWidth / videoHeight;
-        }
-
-        mIconPlane.transform.localScale = new Vector3(-iconWidth, 1.0f, iconHeight);
-    }
-
-
-    private void CheckIconPlaneVisibility()
-    {
-        // If the video object renderer is currently enabled, we might need to toggle the icon plane visibility
-        if (GetComponent<Renderer>().enabled)
-        {
-            // Check if the icon plane renderer has to be disabled explicitly in case it was enabled by another script (e.g. TrackableEventHandler)
-            Renderer rendererComp = mIconPlane.GetComponent<Renderer>();
-            if (rendererComp.enabled != mIconPlaneActive)
-                rendererComp.enabled = mIconPlaneActive;
-        }
     }
 
     #endregion // PRIVATE_METHODS
