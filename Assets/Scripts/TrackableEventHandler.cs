@@ -14,12 +14,14 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
     private bool mHasBeenFound = false;
     private bool mLostTracking;
     private float mSecondsSinceLost;
+	private tapMeshHandler mTap;
     #endregion // PRIVATE_MEMBERS
 
 
     #region MONOBEHAVIOUR_METHODS
     void Start()
     {
+		mTap = GetComponent<tapMeshHandler> ();
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
         if (mTrackableBehaviour)
         {
@@ -79,9 +81,9 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
     #region PRIVATE_METHODS
     private void OnTrackingFound()
     {
+		mTap.setDetection (true);
         Renderer[] rendererComponents = GetComponentsInChildren<Renderer>();
         Collider[] colliderComponents = GetComponentsInChildren<Collider>();
-
         // Enable rendering:
         foreach (Renderer component in rendererComponents)
         {
@@ -98,35 +100,35 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 
         // Optionally play the video automatically when the target is found
 
-        VideoPlaybackBehaviour[] videos = GetComponentsInChildren<VideoPlaybackBehaviour>();
-        foreach (VideoPlaybackBehaviour video in videos)
-        {
-            if (video != null && video.AutoPlay)
-            {
-                if (video.VideoPlayer.IsPlayableOnTexture())
-                {
-                    VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
-                    if (state == VideoPlayerHelper.MediaState.PAUSED ||
-                        state == VideoPlayerHelper.MediaState.READY ||
-                        state == VideoPlayerHelper.MediaState.STOPPED)
-                    {
-                        // Pause other videos before playing this one
-                        // PauseOtherVideos(video);
-
-                        // Play this video on texture where it left off
-                        video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
-                    }
-                    else if (state == VideoPlayerHelper.MediaState.REACHED_END)
-                    {
-                        // Pause other videos before playing this one
-                        // PauseOtherVideos(video);
-
-                        // Play this video from the beginning
-                        video.VideoPlayer.Play(false, 0);
-                    }
-                }
-            }
-        }
+//        VideoPlaybackBehaviour[] videos = GetComponentsInChildren<VideoPlaybackBehaviour>();
+//        foreach (VideoPlaybackBehaviour video in videos)
+//        {
+//            if (video != null && video.AutoPlay)
+//            {
+//                if (video.VideoPlayer.IsPlayableOnTexture())
+//                {
+//                    VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
+//                    if (state == VideoPlayerHelper.MediaState.PAUSED ||
+//                        state == VideoPlayerHelper.MediaState.READY ||
+//                        state == VideoPlayerHelper.MediaState.STOPPED)
+//                    {
+//                        // Pause other videos before playing this one
+//                        // PauseOtherVideos(video);
+//
+//                        // Play this video on texture where it left off
+//                        video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
+//                    }
+//                    else if (state == VideoPlayerHelper.MediaState.REACHED_END)
+//                    {
+//                        // Pause other videos before playing this one
+//                        // PauseOtherVideos(video);
+//
+//                        // Play this video from the beginning
+//                        video.VideoPlayer.Play(false, 0);
+//                    }
+//                }
+//            }
+//        }
 
         mHasBeenFound = true;
         mLostTracking = false;
@@ -136,7 +138,6 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
     {
         Renderer[] rendererComponents = GetComponentsInChildren<Renderer>();
         Collider[] colliderComponents = GetComponentsInChildren<Collider>();
-
         // Disable rendering:
         foreach (Renderer component in rendererComponents)
         {
@@ -150,27 +151,27 @@ public class TrackableEventHandler : MonoBehaviour, ITrackableEventHandler
         }
 
         Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
-
+		mTap.setDetection (false);
         mLostTracking = true;
         mSecondsSinceLost = 0;
     }
 
     // Pause all videos except this one
-    private void PauseOtherVideos(VideoPlaybackBehaviour currentVideo)
-    {
-        VideoPlaybackBehaviour[] videos = (VideoPlaybackBehaviour[])
-                FindObjectsOfType(typeof(VideoPlaybackBehaviour));
-
-        foreach (VideoPlaybackBehaviour video in videos)
-        {
-            if (video != currentVideo)
-            {
-                if (video.CurrentState == VideoPlayerHelper.MediaState.PLAYING)
-                {
-                    video.VideoPlayer.Pause();
-                }
-            }
-        }
-    }
+//    private void PauseOtherVideos(VideoPlaybackBehaviour currentVideo)
+//    {
+//        VideoPlaybackBehaviour[] videos = (VideoPlaybackBehaviour[])
+//                FindObjectsOfType(typeof(VideoPlaybackBehaviour));
+//
+//        foreach (VideoPlaybackBehaviour video in videos)
+//        {
+//            if (video != currentVideo)
+//            {
+//                if (video.CurrentState == VideoPlayerHelper.MediaState.PLAYING)
+//                {
+//                    video.VideoPlayer.Pause();
+//                }
+//            }
+//        }
+//    }
     #endregion //PRIVATE_METHODS
 }
