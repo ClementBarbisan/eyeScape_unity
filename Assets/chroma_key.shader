@@ -6,9 +6,9 @@
                 _Smooth ("Smoothing", Range(0,1)) = 0.5
         }
         SubShader {
-                Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+                Tags { "Queue"="Geometry" "IgnoreProjector"="True" "RenderType"="Transparent"}
                 LOD 100
-                ZTest Always Cull Back ZWrite On Lighting Off Fog { Mode off }
+//                ZTest Always Cull Back ZWrite On Lighting Off Fog { Mode off }
                 CGPROGRAM
                 #pragma surface surf Lambert alpha
 
