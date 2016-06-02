@@ -35,7 +35,7 @@ public class tapMeshHandler : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		index = 0;
-		list = GameObject.FindGameObjectsWithTag ("model1");
+		list = GameObject.FindGameObjectsWithTag ("model");
 		videos = list [index].GetComponentsInChildren<VideoPlaybackBehaviour> ();
 	}
 
@@ -53,6 +53,7 @@ public class tapMeshHandler : MonoBehaviour {
             {
                 if (video.VideoPlayer.IsPlayableOnTexture())
                 {
+					Debug.Log ("PlayVideo");
                     VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
                     if (state == VideoPlayerHelper.MediaState.PAUSED ||
                         state == VideoPlayerHelper.MediaState.READY ||
