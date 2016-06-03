@@ -4,16 +4,25 @@ using System.Collections.Generic;
 
 public class tapMeshHandler : MonoBehaviour {
 	public bool loop = true;
-	bool detection = true;
 	VideoPlaybackBehaviour[] videos;
 	GameObject[] list;
 	int index;
 
 	public void setDetection(bool val)
 	{
-		if ((detection = val) == true && index < list.Length) {
+		if (val == true && index < list.Length) {
 			index = (index + 1) % list.Length;
 			enableMesh ();
+		} 
+		else
+			disableMesh ();
+	}
+
+	void disableMesh()
+	{
+		for (int i = 0; i < list.Length; i++) 
+		{
+			list[i].SetActive(false);
 		}
 	}
 
@@ -41,7 +50,6 @@ public class tapMeshHandler : MonoBehaviour {
 
 	void Start()
 	{
-		startVideos ();
 		enableMesh ();
 	}
 
