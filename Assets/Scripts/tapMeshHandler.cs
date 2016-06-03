@@ -11,18 +11,18 @@ public class tapMeshHandler : MonoBehaviour {
 
 	public void setDetection(bool val)
 	{
-		if ((detection = val) == true && index < list.Length)
+		if ((detection = val) == true && index < list.Length) {
+			index = (index + 1) % list.Length;
 			enableMesh ();
+		}
 	}
 
 	void enableMesh()
 	{
 		for (int i = 0; i < list.Length; i++) 
 		{
-			Debug.Log ("Not Activate");
 			if (i == index)
 			{
-				Debug.Log("Activate");
 				list[i].SetActive(true);
 				videos = list[i].GetComponentsInChildren<VideoPlaybackBehaviour>();
 				startVideos ();
@@ -53,7 +53,6 @@ public class tapMeshHandler : MonoBehaviour {
             {
                 if (video.VideoPlayer.IsPlayableOnTexture())
                 {
-					Debug.Log ("PlayVideo");
                     VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
                     if (state == VideoPlayerHelper.MediaState.PAUSED ||
                         state == VideoPlayerHelper.MediaState.READY ||
@@ -87,11 +86,6 @@ public class tapMeshHandler : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && detection)
-		{
-			index = (index + 1) % list.Length;
-			enableMesh ();
-        }
 		checkVideos ();
     }
 }

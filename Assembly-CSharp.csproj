@@ -54,6 +54,7 @@
      <Compile Include="Assets\Common\SplashAbout\LoadingScreen.cs" />
      <Compile Include="Assets\Common\TapHandler.cs" />
      <Compile Include="Assets\Common\TrackableSettings.cs" />
+     <Compile Include="Assets\Scripts\MirrorReflection.cs" />
      <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\RotateAround.cs" />
      <Compile Include="Assets\Scripts\TrackableEventHandler.cs" />
@@ -101,7 +102,6 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\initReflectionProbe.cs" />
      <None Include="Assets\Plugins\iOS\VuforiaMediaSource\src\VideoPlayerWrapper.mm.txt" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
@@ -121,9 +121,11 @@
      <None Include="Assets\Plugins\Android\AndroidManifest 1.xml" />
      <None Include="Assets\chroma_key.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
+     <None Include="Assets\mirrorReflection.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
+     <None Include="Assets\reflect.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
