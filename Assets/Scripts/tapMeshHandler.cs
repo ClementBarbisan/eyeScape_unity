@@ -4,17 +4,19 @@ using System.Collections.Generic;
 
 public class tapMeshHandler : MonoBehaviour {
 	public bool loop = true;
+	public int nbModel = 0;
+	bool detection = true;
 	VideoPlaybackBehaviour[] videos;
 	GameObject[] list;
 	int index;
 
 	public void setDetection(bool val)
 	{
-		if (val == true && index < list.Length) {
+		if (detection != val && (detection = val) == true && index < list.Length) {
 			index = (index + 1) % list.Length;
 			enableMesh ();
 		} 
-		else
+		else if (!detection)
 			disableMesh ();
 	}
 
@@ -44,7 +46,7 @@ public class tapMeshHandler : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		index = 0;
-		list = GameObject.FindGameObjectsWithTag ("model");
+		list = GameObject.FindGameObjectsWithTag ("model" + nbModel);
 		videos = list [index].GetComponentsInChildren<VideoPlaybackBehaviour> ();
 	}
 
