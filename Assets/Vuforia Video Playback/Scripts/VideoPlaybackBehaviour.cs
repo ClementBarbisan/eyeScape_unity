@@ -16,6 +16,7 @@ using System.Collections.Generic;
 /// The VideoPlaybackBehaviour manages the appearance of a video that can be superimposed on a target.
 /// Playback controls are shown on top of it to control the video. 
 /// </summary>
+
 public class VideoPlaybackBehaviour : MonoBehaviour
 {
     #region PUBLIC_MEMBER_VARIABLES
@@ -29,6 +30,7 @@ public class VideoPlaybackBehaviour : MonoBehaviour
     /// Define whether video should automatically start
     /// </summary>
     public bool m_autoPlay = false;
+	public float scale = 1.0f;
 
     #endregion // PUBLIC_MEMBER_VARIABLES
 
@@ -204,7 +206,7 @@ public class VideoPlaybackBehaviour : MonoBehaviour
                         float aspect = videoHeight / (float) videoWidth;
 
                         // Flip the plane as the video texture is mirrored on the horizontal
-                        transform.localScale = new Vector3(-0.1f, 0.1f, 0.1f * aspect);
+                        transform.localScale = new Vector3(-0.1f * scale, 0.1f * scale, 0.1f * aspect * scale);
                     }
 
                     // Seek ahead if necessary

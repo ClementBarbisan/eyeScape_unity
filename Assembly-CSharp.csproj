@@ -60,7 +60,11 @@
      <Compile Include="Assets\Scripts\TrackableEventHandler.cs" />
      <Compile Include="Assets\Scripts\VideoPlaybackMenuOptions.cs" />
      <Compile Include="Assets\Scripts\VideoPlaybackTapHandler.cs" />
+     <Compile Include="Assets\Scripts\changeColor.cs" />
+     <Compile Include="Assets\Scripts\changeMat.cs" />
+     <Compile Include="Assets\Scripts\focusCamera.cs" />
      <Compile Include="Assets\Scripts\tapMeshHandler.cs" />
+     <Compile Include="Assets\Scripts\textureChange.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlaybackBehaviour.cs" />
      <Compile Include="Assets\Vuforia Video Playback\Scripts\VideoPlayerHelper.cs" />
      <Compile Include="Assets\Vuforia\Scripts\BackgroundPlaneBehaviour.cs" />
@@ -102,7 +106,6 @@
      <Compile Include="Assets\Vuforia\Scripts\WireframeBehaviour.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WireframeTrackableEventHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\WordBehaviour.cs" />
-     <Compile Include="Assets\focusCamera.cs" />
      <None Include="Assets\Plugins\iOS\VuforiaMediaSource\src\VideoPlayerWrapper.mm.txt" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\link.xml" />
@@ -120,13 +123,13 @@
      <None Include="Assets\Vuforia\Shaders\DepthMask.shader" />
      <None Include="Assets\readme_SDK.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest 1.xml" />
-     <None Include="Assets\chroma_key.shader" />
+     <None Include="Assets\Shaders\chroma_key.shader" />
      <None Include="Assets\Vuforia\Shaders\ClippingMask.shader" />
-     <None Include="Assets\mirrorReflection.shader" />
+     <None Include="Assets\Shaders\mirrorReflection.shader" />
      <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
      <None Include="Assets\license_3rdpartynotice.txt" />
      <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
-     <None Include="Assets\reflect.shader" />
+     <None Include="Assets\Shaders\reflect.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

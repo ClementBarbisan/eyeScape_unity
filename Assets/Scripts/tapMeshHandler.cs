@@ -8,15 +8,21 @@ public class tapMeshHandler : MonoBehaviour {
 	bool detection = true;
 	VideoPlaybackBehaviour[] videos;
 	GameObject[] list;
+	public List<textureChange> flags;
 	int index;
+
+	private delegate void changeTexture();
+	private changeTexture changeTex;
 
 	public void setDetection(bool val)
 	{
 		if (detection != val && (detection = val) == true && index < list.Length) {
 			index = (index + 1) % list.Length;
+			if (flags.Count > 0)
+				changeTex ();
 			enableMesh ();
 		} 
-		else if (!detection)
+		else if (!val)
 			disableMesh ();
 	}
 
@@ -52,6 +58,8 @@ public class tapMeshHandler : MonoBehaviour {
 
 	void Start()
 	{
+		for (int i = 0; i < flags.Count; i++)
+			changeTex += flags [i].changeTexture;
 		enableMesh ();
 	}
 
@@ -61,7 +69,7 @@ public class tapMeshHandler : MonoBehaviour {
         {
             if (video != null && video.AutoPlay)
             {
-                if (video.VideoPlayer.IsPlayableOnTexture())
+				if (video.VideoPlayer != null && video.VideoPlayer.IsPlayableOnTexture())
                 {
                     VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
                     if (state == VideoPlayerHelper.MediaState.PAUSED ||

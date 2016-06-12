@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/changeColor.cs">
     <Files>
-      <File FileName="Assets/focusCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/changeColor.cs" Line="32" Column="50" />
+      <File FileName="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MirrorReflection.cs" Line="1" Column="1" />
       <File FileName="Assets/mirrorReflection.shader" Line="1" Column="1" />
       <File FileName="Assets/reflect.shader" Line="1" Column="1" />
       <File FileName="Assets/Vuforia/Scripts/TurnOffBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs" Line="115" Column="15" />
       <File FileName="Assets/Scripts/tapMeshHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/changeMat.cs" Line="18" Column="33" />
+      <File FileName="Assets/Scripts/textureChange.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
