@@ -67,17 +67,19 @@ public class tapMeshHandler : MonoBehaviour {
     {
         foreach (VideoPlaybackBehaviour video in videos)
         {
-            if (video != null && video.AutoPlay)
+			Debug.Log ("Video Number = " + videos.Length);
+            if (video.AutoPlay)
             {
-				if (video.VideoPlayer != null && video.VideoPlayer.IsPlayableOnTexture())
+				if (video.VideoPlayer.IsPlayableOnTexture())
                 {
                     VideoPlayerHelper.MediaState state = video.VideoPlayer.GetStatus();
                     if (state == VideoPlayerHelper.MediaState.PAUSED ||
                         state == VideoPlayerHelper.MediaState.READY ||
-                        state == VideoPlayerHelper.MediaState.STOPPED)
+                        state == VideoPlayerHelper.MediaState.STOPPED ||
+						state == VideoPlayerHelper.MediaState.PLAYING)
                     {
                        	// Play this video on texture where it left off
-                        video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
+						video.VideoPlayer.Play(false, video.VideoPlayer.GetCurrentPosition());
                     }
                     else if (state == VideoPlayerHelper.MediaState.REACHED_END)
                     {
@@ -93,7 +95,7 @@ public class tapMeshHandler : MonoBehaviour {
 	{
 		foreach (VideoPlaybackBehaviour currentVideo in videos)
 		{
-			if (currentVideo != null && currentVideo.VideoPlayer.IsPlayableOnTexture () && loop) 
+			if (currentVideo.VideoPlayer.IsPlayableOnTexture () && loop) 
 			{
 				VideoPlayerHelper.MediaState state = currentVideo.VideoPlayer.GetStatus();
 				if (state == VideoPlayerHelper.MediaState.REACHED_END)

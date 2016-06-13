@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\VideoPlaybackMenuOptions.cs" />
      <Compile Include="Assets\Scripts\VideoPlaybackTapHandler.cs" />
      <Compile Include="Assets\Scripts\changeColor.cs" />
-     <Compile Include="Assets\Scripts\changeMat.cs" />
      <Compile Include="Assets\Scripts\focusCamera.cs" />
      <Compile Include="Assets\Scripts\tapMeshHandler.cs" />
      <Compile Include="Assets\Scripts\textureChange.cs" />
