@@ -28,8 +28,8 @@ public class changeColor : MonoBehaviour {
 
 	public void animateColor()
 	{
-		index = (index + 1) % 40;
-		float multiple = (40.0f - index) / 40.0f;
+		index = (index + 1) % 100;
+		float multiple = (100.0f - index) / 100.0f;
 		foreach (MeshRenderer r in list) {
 			Color tmp = r.material.color;
 			if (index == 0)
