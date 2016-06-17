@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 15d8dea286a0844559b1e560262ee0ee
-timeCreated: 1465644721
+guid: 4ad737869de1244fb81c9b9f09ad1aec
+timeCreated: 1465880769
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -44,23 +44,24 @@ ModelImporter:
     100072: Cube_6
     100074: Cube_6_2
     100076: Cube_7
-    100078: Cube_7_2
-    100080: Cube_8
-    100082: Cube_8_2
-    100084: Cube_9
-    100086: Cube_9_2
-    100088: Disc
-    100090: Disc_1
-    100092: Disc_2
-    100094: Null
-    100096: Null_1
-    100098: Null_2
-    100100: Null_3
-    100102: Null_4
-    100104: Null_5
-    100106: Null_6
-    100108: Null_7
-    100110: Plane
+    100078: Cube_8
+    100080: Cube_9
+    100082: Cube_9_2
+    100084: Null
+    100086: Null_1
+    100088: Null_2
+    100090: Null_3
+    100092: Null_4
+    100094: Null_5
+    100096: Null_6
+    100098: Null_7
+    100100: Plane
+    100102: Sphere
+    100104: Sphere_1
+    100106: Sphere_2
+    100108: Sphere_4
+    100110: Sphere_6
+    100112: Sphere_7
     400000: //RootNode
     400002: CINEMA_4D_Editor
     400004: Cube
@@ -100,23 +101,24 @@ ModelImporter:
     400072: Cube_6
     400074: Cube_6_2
     400076: Cube_7
-    400078: Cube_7_2
-    400080: Cube_8
-    400082: Cube_8_2
-    400084: Cube_9
-    400086: Cube_9_2
-    400088: Disc
-    400090: Disc_1
-    400092: Disc_2
-    400094: Null
-    400096: Null_1
-    400098: Null_2
-    400100: Null_3
-    400102: Null_4
-    400104: Null_5
-    400106: Null_6
-    400108: Null_7
-    400110: Plane
+    400078: Cube_8
+    400080: Cube_9
+    400082: Cube_9_2
+    400084: Null
+    400086: Null_1
+    400088: Null_2
+    400090: Null_3
+    400092: Null_4
+    400094: Null_5
+    400096: Null_6
+    400098: Null_7
+    400100: Plane
+    400102: Sphere
+    400104: Sphere_1
+    400106: Sphere_2
+    400108: Sphere_4
+    400110: Sphere_6
+    400112: Sphere_7
     2300000: Cube
     2300002: Cube_1
     2300004: Cube_1_2
@@ -154,15 +156,16 @@ ModelImporter:
     2300068: Cube_6
     2300070: Cube_6_2
     2300072: Cube_7
-    2300074: Cube_7_2
-    2300076: Cube_8
-    2300078: Cube_8_2
-    2300080: Cube_9
-    2300082: Cube_9_2
-    2300084: Disc
-    2300086: Disc_1
-    2300088: Disc_2
-    2300090: Plane
+    2300074: Cube_8
+    2300076: Cube_9
+    2300078: Cube_9_2
+    2300080: Plane
+    2300082: Sphere
+    2300084: Sphere_1
+    2300086: Sphere_2
+    2300088: Sphere_4
+    2300090: Sphere_6
+    2300092: Sphere_7
     3300000: Cube
     3300002: Cube_1
     3300004: Cube_1_2
@@ -200,61 +203,63 @@ ModelImporter:
     3300068: Cube_6
     3300070: Cube_6_2
     3300072: Cube_7
-    3300074: Cube_7_2
-    3300076: Cube_8
-    3300078: Cube_8_2
-    3300080: Cube_9
-    3300082: Cube_9_2
-    3300084: Disc
-    3300086: Disc_1
-    3300088: Disc_2
-    3300090: Plane
-    4300000: Disc_2
-    4300002: Disc_1
-    4300004: Disc
-    4300006: Cube_9
-    4300008: Cube_8
-    4300010: Cube_7
-    4300012: Cube_6
-    4300014: Cube_5
-    4300016: Cube_4
-    4300018: Cube_2
-    4300020: Cube_1
-    4300022: Cube
-    4300024: Cube_3
-    4300026: Cube_3_2
-    4300028: Cube_2_2
-    4300030: Cube_1_2
-    4300032: Cube_2_3
-    4300034: Cube_3_3
-    4300036: Cube_2_4
-    4300038: Cube_1_3
-    4300040: Cube_3_4
-    4300042: Cube_3_5
-    4300044: Cube_2_5
-    4300046: Cube_1_4
-    4300048: Cube_4_2
-    4300050: Cube_3_6
-    4300052: Cube_2_6
-    4300054: Cube_1_5
-    4300056: Cube_5_2
-    4300058: Cube_3_7
-    4300060: Cube_2_7
-    4300062: Cube_1_6
-    4300064: Cube_6_2
-    4300066: Cube_3_8
-    4300068: Cube_2_8
-    4300070: Cube_1_7
-    4300072: Cube_7_2
-    4300074: Cube_3_9
-    4300076: Cube_2_9
-    4300078: Cube_1_8
-    4300080: Cube_8_2
-    4300082: Cube_3_10
-    4300084: Cube_2_10
-    4300086: Cube_1_9
-    4300088: Cube_9_2
-    4300090: Plane
+    3300074: Cube_8
+    3300076: Cube_9
+    3300078: Cube_9_2
+    3300080: Plane
+    3300082: Sphere
+    3300084: Sphere_1
+    3300086: Sphere_2
+    3300088: Sphere_4
+    3300090: Sphere_6
+    3300092: Sphere_7
+    4300000: Sphere_2
+    4300002: Sphere_7
+    4300004: Sphere_6
+    4300006: Sphere_4
+    4300008: Sphere_1
+    4300010: Sphere
+    4300012: Cube_9
+    4300014: Cube_6
+    4300016: Cube_5
+    4300018: Cube_4
+    4300020: Cube_2
+    4300022: Cube_1
+    4300024: Cube
+    4300026: Cube_3
+    4300028: Cube_3_2
+    4300030: Cube_2_2
+    4300032: Cube_1_2
+    4300034: Cube_2_3
+    4300036: Cube_3_3
+    4300038: Cube_2_4
+    4300040: Cube_1_3
+    4300042: Cube_3_4
+    4300044: Cube_3_5
+    4300046: Cube_2_5
+    4300048: Cube_1_4
+    4300050: Cube_4_2
+    4300052: Cube_3_6
+    4300054: Cube_2_6
+    4300056: Cube_1_5
+    4300058: Cube_5_2
+    4300060: Cube_3_7
+    4300062: Cube_2_7
+    4300064: Cube_1_6
+    4300066: Cube_6_2
+    4300068: Cube_3_8
+    4300070: Cube_2_8
+    4300072: Cube_1_7
+    4300074: Cube_7
+    4300076: Cube_3_9
+    4300078: Cube_2_9
+    4300080: Cube_1_8
+    4300082: Cube_8
+    4300084: Cube_3_10
+    4300086: Cube_2_10
+    4300088: Cube_1_9
+    4300090: Cube_9_2
+    4300092: Plane
     9500000: //RootNode
   materials:
     importMaterials: 1

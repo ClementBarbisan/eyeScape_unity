@@ -6,16 +6,7 @@ public class changeColor : MonoBehaviour {
 	public List<MeshRenderer> list;
 	public Color col;
 	public Color colBase;
-
-	IEnumerator colorChange(MeshRenderer render, Color col)
-	{
-		Color tmp = render.material.color;
-		for (int i = 0; i < 200; i++) {
-			float multiple = (200.0f - i) / 200.0f;
-			render.material.color = new Vector4 (col.r * (1.0f - multiple) + tmp.r * multiple, col.g * (1.0f - multiple) + tmp.g * multiple, col.b * (1.0f - multiple) + tmp.b * multiple, 1.0f);
-			yield return null;
-		}
-	}
+	private int index = 0;
 
 	IEnumerator opacityIncrease(MeshRenderer render, Color col, float max, float value)
 	{
@@ -27,7 +18,7 @@ public class changeColor : MonoBehaviour {
 
 	void resetColor(MeshRenderer render, Color col)
 	{
-		render.material.color = new Color (col.r, col.g, col.b, 1.0f);
+		render.material.color = new Color (col.r, col.g, col.b, col.a);
 	}
 
 	void makeTransparent(float min, MeshRenderer render, Color col)
@@ -37,8 +28,14 @@ public class changeColor : MonoBehaviour {
 
 	public void animateColor()
 	{
-		foreach (MeshRenderer r in list)
-			StartCoroutine (colorChange(r, Color.blue));
+		index = (index + 1) % 40;
+		float multiple = (40.0f - index) / 40.0f;
+		foreach (MeshRenderer r in list) {
+			Color tmp = r.material.color;
+			if (index == 0)
+				tmp = colBase;
+			r.material.color = new Vector4 (col.r * (1.0f - multiple) + tmp.r * multiple, col.g * (1.0f - multiple) + tmp.g * multiple, col.b * (1.0f - multiple) + tmp.b * multiple, col.a * (1.0f - multiple) + tmp.a * multiple);
+		}
 	}
 
 	public void initColor()
@@ -50,13 +47,13 @@ public class changeColor : MonoBehaviour {
 	public void changeOpacity()
 	{
 		foreach (MeshRenderer r in list)
-			StartCoroutine (opacityIncrease (r, Color.blue, 1.0f, 30f));
+			StartCoroutine (opacityIncrease (r, col, 1.0f, 20f));
 	}
 
 	public void changeTransparency()
 	{
 		foreach (MeshRenderer r in list)
-			makeTransparent (0.0f, r, Color.blue);
+			makeTransparent (0.0f, r, col);
 	}
 
 	// Use this for initialization
