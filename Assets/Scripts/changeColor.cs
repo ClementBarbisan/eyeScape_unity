@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class changeColor : MonoBehaviour {
 	public List<MeshRenderer> list;
+	public List<textureChange> tex;
 	public Color col;
 	public Color colBase;
 	private int index = 0;
@@ -47,7 +48,13 @@ public class changeColor : MonoBehaviour {
 	public void changeOpacity()
 	{
 		foreach (MeshRenderer r in list)
-			StartCoroutine (opacityIncrease (r, col, 1.0f, 20f));
+			StartCoroutine (opacityIncrease (r, col, col.a, 20f));
+	}
+
+	public void texChange()
+	{
+		foreach (textureChange texture in tex)
+			texture.changeTexture ();
 	}
 
 	public void changeTransparency()

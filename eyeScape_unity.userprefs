@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/changeColor.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets/Scripts/changeColor.cs" Line="36" Column="15" />
+      <File FileName="Assets/Scripts/changeColor.cs" Line="1" Column="1" />
       <File FileName="Assets/Vuforia Video Playback/Scripts/VideoPlaybackBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/MirrorReflection.cs" Line="1" Column="1" />
       <File FileName="Assets/Vuforia/Scripts/TurnOffBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/tapMeshHandler.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/tapMeshHandler.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/textureChange.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/TrackableEventHandler.cs" Line="1" Column="1" />
       <File FileName="Assets/Vuforia Video Playback/Scripts/VideoPlayerHelper.cs" Line="1" Column="1" />
